@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 const int background = 0xff111C22;
@@ -19,5 +18,5 @@ const MaterialColor primaryBlack = MaterialColor(
     900: Color(0xff111C22),
   },
 );
-
+var black = Color(0xff111C22);
 

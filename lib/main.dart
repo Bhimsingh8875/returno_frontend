@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:returno/constants/colors_constant.dart';
 import 'package:returno/navigation_services/navigator_key.dart';
+import 'package:returno/screens/onboarding/tourial.dart';
 import 'package:returno/screens/splash/splash.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light));
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: primaryBlack,
       ),
-      home: const Splash(),
+      home: const Tourial(),
       debugShowCheckedModeBanner: false,
     );
   }
