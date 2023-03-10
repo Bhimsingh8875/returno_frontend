@@ -3,11 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:returno/constants/colors_constant.dart';
-import 'package:returno/constants/media_query.dart';
-
 import '../../constants/image_constants.dart';
 import '../../utills/navigation_rougth.dart';
-import '../onboarding/tourial.dart';
+import '../onboarding/tutorial.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -21,7 +19,7 @@ class _SplashState extends State<Splash> {
   @mustCallSuper
   void initState() {
     Future.delayed(const Duration(milliseconds: 2000), () {
-      push_to(context,Tourial());
+      push_to(context, Tourial());
       // Navigator.push(
       //     context, MaterialPageRoute(builder: (context) => Tourial()));
     });
@@ -30,10 +28,9 @@ class _SplashState extends State<Splash> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(elevation: 0),
-      backgroundColor: black,
-      body: Center(
+    return Padding(
+      padding: const EdgeInsets.only(top: 46),
+      child: Center(
         child: SvgPicture.asset(
           splashlogo,
         ),
