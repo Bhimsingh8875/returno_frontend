@@ -1,14 +1,9 @@
-
-
 // ignore_for_file: non_constant_identifier_names, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:returno/utills/text_styles.dart';
 import '../constants/colors_constant.dart';
 import '../constants/media_quiery.dart';
-
-
-
 
 Widget custom_textformfield(
     {String? hintText,
@@ -17,18 +12,19 @@ Widget custom_textformfield(
     String? Function(String?)? validator,
     bool obscureText = false}) {
   return TextFormField(
-    cursorHeight: h * 0.03,
+    keyboardAppearance: Brightness.light,
+  
     cursorWidth: w * 0.00277,
     cursorColor: white70,
     controller: controller,
     style: CustomStyle().style_16_reguler(white70),
     decoration: InputDecoration(
-        contentPadding: EdgeInsets.only(left: 10),
+        contentPadding: EdgeInsets.only(left: w*0.0277),
         fillColor: black70,
         filled: true,
         hintText: hintText,
         suffixIcon: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15),
+          padding:  EdgeInsets.symmetric(vertical: h*0.01875),
           child: suffixIcon,
         ),
         hintStyle: CustomStyle().style_16_reguler(black50),

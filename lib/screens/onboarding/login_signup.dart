@@ -100,8 +100,10 @@ class _LoginState extends State<Login> {
                         Align(
                             alignment: Alignment.topRight,
                             child: InkWell(
-                                onTap: () {
+                                onTap: () {FocusScope.of(context).unfocus();
                                   push_to(context, Forgot_Password());
+                                  login_emailcontroller.clear();
+                                  login_passwordcontroller.clear();
                                 },
                                 child: custom_text(
                                     text: forgot,
@@ -109,9 +111,13 @@ class _LoginState extends State<Login> {
                                         .style_15_reguler(black50)))),
                         SizedBox(height: h * 0.0475),
                         custom_button(
-                            onTap: () {
+                            onTap: () { FocusScope.of(context).unfocus();
                               if (login_key.currentState!.validate()) {
-                                push_to(context, Homepage());
+                                login_emailcontroller.clear();
+                                login_passwordcontroller.clear();
+                               
+
+                                pushAndRevoveUntil(context, Homepage());
                               }
                             },
                             children: [
@@ -124,14 +130,22 @@ class _LoginState extends State<Login> {
                               buttonclr2
                             ]),
                         SizedBox(height: h * 0.0225),
-                        custom_button(onTap: () {}, children: [
-                          custom_text(
-                              text: continue_as_guest,
-                              style: CustomStyle().style_18_reguler(blue)),
-                        ], colors: [
-                          white,
-                          white
-                        ]),
+                        custom_button(
+                            onTap: () {
+                              FocusScope.of(context).unfocus();
+                              login_emailcontroller.clear();
+                              login_passwordcontroller.clear();
+                              pushAndRevoveUntil(context, Homepage());
+                            },
+                            children: [
+                              custom_text(
+                                  text: continue_as_guest,
+                                  style: CustomStyle().style_18_reguler(blue)),
+                            ],
+                            colors: [
+                              white,
+                              white
+                            ]),
                         SizedBox(height: h * 0.0475),
                       ]),
                     )
@@ -195,9 +209,12 @@ class _LoginState extends State<Login> {
                             ),
                             SizedBox(height: h * 0.0475),
                             custom_button(
-                                onTap: () {
+                                onTap: () { FocusScope.of(context).unfocus();
                                   if (signup_key.currentState!.validate()) {
-                                    push_to(context, Homepage());
+                                    signup_emailcontroller.clear();
+                                    signup_passwordcontroller.clear();
+                                   
+                                    pushAndRevoveUntil(context, Homepage());
                                   }
                                 },
                                 children: [
@@ -211,14 +228,23 @@ class _LoginState extends State<Login> {
                                   buttonclr2
                                 ]),
                             SizedBox(height: h * 0.0225),
-                            custom_button(onTap: () {}, children: [
-                              custom_text(
-                                  text: continue_as_guest,
-                                  style: CustomStyle().style_18_reguler(blue)),
-                            ], colors: [
-                              white,
-                              white
-                            ]),
+                            custom_button(
+                                onTap: () {
+                                  FocusScope.of(context).unfocus();
+                                  signup_emailcontroller.clear();
+                                  signup_passwordcontroller.clear();
+                                  pushAndRevoveUntil(context, Homepage());
+                                },
+                                children: [
+                                  custom_text(
+                                      text: continue_as_guest,
+                                      style:
+                                          CustomStyle().style_18_reguler(blue)),
+                                ],
+                                colors: [
+                                  white,
+                                  white
+                                ]),
                             SizedBox(height: h * 0.0475),
                           ]),
                     ),
@@ -228,11 +254,15 @@ class _LoginState extends State<Login> {
                   custom_text(
                       text: current_page ? account : already,
                       style: CustomStyle().style_16_reguler(white70)),
-                  SizedBox(width: 5),
+                  SizedBox(width: w * 0.001385),
                   InkWell(
                     onTap: (() {
-                      setState(() {
+                      setState(() { FocusScope.of(context).unfocus();
                         current_page = !current_page;
+                        signup_emailcontroller.clear();
+                        signup_passwordcontroller.clear();
+                        login_emailcontroller.clear();
+                        login_passwordcontroller.clear();
                       });
                     }),
                     child: custom_text(

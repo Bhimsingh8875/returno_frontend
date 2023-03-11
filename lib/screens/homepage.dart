@@ -43,83 +43,107 @@ class _HomepageState extends State<Homepage>
           scaffoldKey.currentState?.openDrawer();
         },
         child: Padding(
-          padding: const EdgeInsets.only(left: 12),
+          padding: EdgeInsets.only(left: w * 0.03324),
           child: SvgPicture.asset(menu_icon),
         ),
       )),
-      body: PageView.builder(
-        itemCount: 10,
-        pageSnapping: true,
-        physics: BouncingScrollPhysics(),
-        scrollDirection: Axis.vertical,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: h * 1,
-            width: w * 1,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: h * 0.58,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: h * 1,
+          child: RefreshIndicator(
+            displacement: h * 0.125,
+            color: Colors.blue,
+            onRefresh: () async {
+              await Future.delayed(Duration(milliseconds: 65-0));
+            },
+            child: Center(
+                child: NotificationListener<OverscrollIndicatorNotification>(
+              onNotification: (OverscrollIndicatorNotification overScroll) {
+                overScroll.disallowGlow();
+                return false;
+              },
+              child: PageView.builder(
+                padEnds: true,
+                allowImplicitScrolling: true,
+                itemCount: 20,
+                scrollDirection: Axis.vertical,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    height: h * 1,
                     width: w * 1,
-                    margin: EdgeInsets.symmetric(vertical: 20),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        image: DecorationImage(
-                            image: AssetImage(background_image),
-                            fit: BoxFit.cover)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 15),
-                            child: CircleAvatar(
-                                radius: 20,
-                                backgroundColor: black.withOpacity(0.5),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      _isFavorite = !_isFavorite;
-                                    });
-                                    _controller
-                                        .reverse()
-                                        .then((value) => _controller.forward());
-                                  },
-                                  child: ScaleTransition(
-                                      scale: Tween(begin: 0.7, end: 1.0)
-                                          .animate(CurvedAnimation(
-                                              parent: _controller,
-                                              curve: Curves.easeOut)),
-                                      child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image.asset(
-                                            favorite_icon,
-                                            color: _isFavorite ? red : white,
-                                          ))),
-                                )))
-                      ],
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: w * 0.04155),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: h * 0.56,
+                            width: w * 1,
+                            margin: EdgeInsets.symmetric(vertical: h * 0.025),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                image: DecorationImage(
+                                    image: AssetImage(background_image),
+                                    fit: BoxFit.cover)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: w * 0.04155,
+                                        vertical: h * 0.01875),
+                                    child: CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: black.withOpacity(0.5),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _isFavorite = !_isFavorite;
+                                            });
+                                            _controller.reverse().then(
+                                                (value) =>
+                                                    _controller.forward());
+                                          },
+                                          child: ScaleTransition(
+                                              scale: Tween(begin: 0.7, end: 1.0)
+                                                  .animate(CurvedAnimation(
+                                                      parent: _controller,
+                                                      curve: Curves.easeOut)),
+                                              child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Image.asset(
+                                                    favorite_icon,
+                                                    color: _isFavorite
+                                                        ? red
+                                                        : white,
+                                                  ))),
+                                        )))
+                              ],
+                            ),
+                          ),
+                          custom_text(
+                              text: lorem_ipsum_text,
+                              style: CustomStyle().style_18_medium(white)),
+                          SizedBox(height: h * 0.005),
+                          custom_text(
+                              text: lerm_ipsum_sub_text,
+                              style: CustomStyle().style_15_reguler(white)),
+                          SizedBox(height: h * 0.005),
+                          custom_text(
+                              text: lorem_2_sub_text,
+                              style: CustomStyle().style_12_reguler(grey)),
+                        ],
+                      ),
                     ),
-                  ),
-                  custom_text(
-                      text: lorem_ipsum_text,
-                      style: CustomStyle().style_18_medium(white)),
-                  SizedBox(height: 8),
-                  custom_text(
-                      text: lerm_ipsum_sub_text,
-                      style: CustomStyle().style_15_reguler(white)),
-                  SizedBox(height: 8),
-                  custom_text(
-                      text: lorem_2_sub_text,
-                      style: CustomStyle().style_12_reguler(grey)),
-                ],
+                  );
+                },
               ),
-            ),
-          );
-        },
+            )),
+          ),
+        ),
       ),
     );
   }

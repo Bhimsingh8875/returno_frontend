@@ -36,7 +36,7 @@ class _ProfileState extends State<Profile> {
               text: profile, style: CustomStyle().style_18_medium(white))),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: w * 0.04155),
           child: Form(
             key: _formkey,
             child:
@@ -66,19 +66,20 @@ class _ProfileState extends State<Profile> {
                           },
                           child: Align(
                               alignment: Alignment.bottomRight,
-                              child: Image.asset(edit_icon, height: 30)),
+                              child:
+                                  Image.asset(edit_icon, height: h * 0.0375)),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: w * 0.0831),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       custom_text(
                           text: "Manraj Saini",
                           style: CustomStyle().style_18_medium(white)),
-                      SizedBox(height: 8),
+                      SizedBox(height: h * 0.01),
                       custom_text(
                           text: "manrajsaini@gmail.com",
                           style: CustomStyle().style_15_reguler(black50)),
@@ -87,7 +88,7 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30, bottom: 12),
+                padding: EdgeInsets.only(top: h * 0.0375, bottom: h * 0.015),
                 child: custom_text(
                     text: first_name,
                     style: CustomStyle().style_16_medium(white)),
@@ -107,7 +108,7 @@ class _ProfileState extends State<Profile> {
                 },
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 12),
+                padding: EdgeInsets.only(top: h * 0.025, bottom: h * 0.015),
                 child: custom_text(
                     text: last_name,
                     style: CustomStyle().style_16_medium(white)),
@@ -127,7 +128,7 @@ class _ProfileState extends State<Profile> {
                 },
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 12),
+                padding: EdgeInsets.only(top: h * 0.025, bottom: h * 0.015),
                 child: custom_text(
                     text: gmail, style: CustomStyle().style_16_medium(white)),
               ),
@@ -146,7 +147,7 @@ class _ProfileState extends State<Profile> {
                 },
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 12),
+                padding: EdgeInsets.only(top: h * 0.025, bottom: h * 0.015),
                 child: custom_text(
                     text: phone_number,
                     style: CustomStyle().style_16_medium(white)),
@@ -165,10 +166,11 @@ class _ProfileState extends State<Profile> {
                   return null;
                 },
               ),
-              SizedBox(height: 40),
+              SizedBox(height: h * 0.05),
               custom_button(
                   width: w * 1,
                   onTap: () {
+                    FocusScope.of(context).unfocus();
                     if (_formkey.currentState!.validate()) {
                       Navigator.pop(context);
                     }

@@ -3,12 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:returno/utills/text_styles.dart';
 import '../constants/colors_constant.dart';
+import '../constants/media_quiery.dart';
 
 custom_list_tile(Function()? onTap,
   Widget? leading, String text) {
   return ListTile(
     onTap: onTap,
-      contentPadding: EdgeInsets.symmetric(vertical: 3),
+      contentPadding: EdgeInsets.symmetric(vertical: h*0.00375),
       // dense: true,
       leading: leading,
       minLeadingWidth: 10,

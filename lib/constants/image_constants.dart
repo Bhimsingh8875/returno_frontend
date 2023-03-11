@@ -6,7 +6,7 @@ var tourialbackground = "assets/images/NoPath.png";
 
 const menu_icon = "assets/new/Menu.svg";
 const drawer_logo = "assets/new/logo (2).svg";
-const clear_icon = "assets/new/Group 1596@2x.png";
+const clear_icon = "assets/images/clear.png";
 const terms_conditons_icon = "assets/new/Icon material-library-books@2x.png";
 const about_icon = "assets/new/Icon ionic-md-information-circle@2x.png";
 const favorite_icon = "assets/new/Icon awesome-heart@2x.png";

@@ -47,7 +47,7 @@ class _FavoritesState extends State<Favorites>
         scrollDirection: Axis.vertical,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            margin: EdgeInsets.symmetric(horizontal: w*0.04155, vertical: h*0.0125),
             decoration: BoxDecoration(
                 color: backgroundclr,
                 boxShadow: [
@@ -104,16 +104,16 @@ class _FavoritesState extends State<Favorites>
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: h*0.0125),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding:  EdgeInsets.symmetric(horizontal: w*0.04155),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       custom_text(
                           text: lorem_ipsum_text,
                           style: CustomStyle().style_17_medium(white)),
-                      SizedBox(height: 8),
+                      SizedBox(height: h*0.01),
                       custom_text(
                           text: favorite_lorem_text,
                           style: CustomStyle().style_14_reguler(white)),

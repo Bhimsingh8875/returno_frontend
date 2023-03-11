@@ -23,8 +23,12 @@ class _TourialState extends State<Tourial> {
   List page = [Tourial_one(), Tourial_two()];
   var pageController = PageController();
   int currentIndex = 0;
+  var h1, w1;
   @override
   Widget build(BuildContext context) {
+    h1 =
+    MediaQuery.of(context).size.height; w1 =
+    MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: backgroundclr,
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
@@ -32,7 +36,7 @@ class _TourialState extends State<Tourial> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: w * 0.08),
+            padding: EdgeInsets.only(left: w1* 0.08),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
@@ -42,9 +46,9 @@ class _TourialState extends State<Tourial> {
                           currentIndex == index ? indicatorclr : white)),
             ),
           ),
-          SizedBox(height: h * 0.035),
+          SizedBox(height: h1* 0.035),
           Padding(
-              padding: EdgeInsets.only(left: w * 0.08587, bottom: h * 0.01875),
+              padding: EdgeInsets.only(left: w1* 0.08587, bottom: h1* 0.01875),
               child: custom_button(
                   colors: [buttonclr1, buttonclr2],
                   onTap: () {
@@ -66,8 +70,8 @@ class _TourialState extends State<Tourial> {
       body: Stack(
         children: [
           SizedBox(
-            height: h * 1,
-            width: w * 1,
+            height: h1* 1,
+            width: w1* 1,
             child: PageView.builder(
                 controller: pageController,
                 onPageChanged: (value) {
@@ -81,7 +85,7 @@ class _TourialState extends State<Tourial> {
                 }),
           ),
           Padding(
-            padding: EdgeInsets.only(right: w * 0.04155, top: h * 0.0575),
+            padding: EdgeInsets.only(right: w1* 0.04155, top: h1* 0.0575),
             child: Align(
                 alignment: Alignment.topRight,
                 child: InkWell(
@@ -112,7 +116,7 @@ class Tourial_one extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage(tourialbackground), fit: BoxFit.cover)),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: w * 0.04155),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -137,7 +141,7 @@ class Tourial_one extends StatelessWidget {
 
 class Tourial_two extends StatelessWidget {
   const Tourial_two({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,7 +153,7 @@ class Tourial_two extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage(tourialbackground), fit: BoxFit.cover)),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: w * 0.04155),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

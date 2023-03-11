@@ -17,6 +17,7 @@ class AboutApp extends StatefulWidget {
 class _AboutAppState extends State<AboutApp> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
           leading: back_icon(),

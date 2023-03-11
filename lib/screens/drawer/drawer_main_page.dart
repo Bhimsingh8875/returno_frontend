@@ -39,7 +39,7 @@ class _Drawer_pageState extends State<Drawer_page> {
             width: w * 0.7,
             padding: EdgeInsets.symmetric(horizontal: w * 0.03),
             child: Padding(
-              padding: const EdgeInsets.only(top: 70),
+              padding: EdgeInsets.only(top: h * 0.0875),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -50,11 +50,11 @@ class _Drawer_pageState extends State<Drawer_page> {
                           alignment: Alignment.center,
                           child:
                               SvgPicture.asset(drawer_logo, height: h * 0.07)),
-                      SizedBox(height: 40),
+                      SizedBox(height: h * 0.05),
                       custom_text(
                           text: settings,
                           style: CustomStyle().style_18_medium(white)),
-                      SizedBox(height: 15),
+                      SizedBox(height: h * 0.01875),
                       custom_list_tile(() {
                         Navigator.pop(context);
                         push_to(context, Profile());
@@ -62,14 +62,16 @@ class _Drawer_pageState extends State<Drawer_page> {
                       custom_list_tile(() {
                         Navigator.pop(context);
                         push_to(context, Favorites());
-                      }, Image.asset(favorite_icon, color: white, height: 18),
+                      },
+                          Image.asset(favorite_icon,
+                              color: white, height: h * 0.0225),
                           favorites),
                       custom_list_tile(() {
                         Navigator.pop(context);
                         push_to(context, TermsConditions());
                       },
                           Image.asset(terms_conditons_icon,
-                              color: white, height: 20),
+                              color: white, height: h * 0.025),
                           terms_conditions),
                       custom_list_tile(() {
                         Navigator.pop(context);
@@ -79,25 +81,28 @@ class _Drawer_pageState extends State<Drawer_page> {
                       custom_list_tile(() {
                         Navigator.pop(context);
                         push_to(context, AboutApp());
-                      }, Image.asset(about_icon, color: white, height: 20),
+                      },
+                          Image.asset(about_icon,
+                              color: white, height: h * 0.025),
                           about_app),
                       custom_list_tile(() {
+                        Navigator.pop(context);
                         push_to(context, ChangePassword());
                       },
                           Image.asset(change_password_icon,
-                              color: white, height: 20),
+                              color: white, height: h * 0.025),
                           change_password),
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 30),
+                    padding: EdgeInsets.only(bottom: h * 0.0375),
                     child: custom_button(
                         onTap: () {
                           logout_dialog(text: logut_contents);
                         },
                         children: [
                           SvgPicture.asset(logout_icon),
-                          SizedBox(width: 10),
+                          SizedBox(width: w * 0.0277),
                           custom_text(
                               text: logout,
                               style: CustomStyle().style_18_reguler(white))
@@ -114,10 +119,10 @@ class _Drawer_pageState extends State<Drawer_page> {
           GestureDetector(
             onTap: () => Navigator.pop(context),
             child: Padding(
-              padding: const EdgeInsets.only(top: 80),
+              padding: EdgeInsets.only(top: h * 0.1),
               child: Align(
                   alignment: Alignment.topRight,
-                  child: Image.asset(clear_icon, height: 35)),
+                  child: Image.asset(clear_icon, height: h * 0.04375)),
             ),
           ),
         ],

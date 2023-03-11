@@ -61,7 +61,7 @@ class _Forgot_PasswordState extends State<Forgot_Password> {
             ),
             SizedBox(height: h * 0.05),
             custom_button(
-                onTap: () {
+                onTap: () {FocusScope.of(context).unfocus();
                   if (globalKey.currentState!.validate()) {
                     replaceRoute(context, Login());
                   }

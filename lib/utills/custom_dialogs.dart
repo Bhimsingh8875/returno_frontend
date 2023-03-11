@@ -19,7 +19,7 @@ logout_dialog({String? text}) {
           text: text, style: CustomStyle().style_16_reguler(black)),
       negativeActionBuilder: (context, controller, _) {
         return Padding(
-          padding: const EdgeInsets.only(right: 30),
+          padding:  EdgeInsets.only(right: w*0.0831),
           child: TextButton(
               onPressed: () {
                 controller.dismiss();

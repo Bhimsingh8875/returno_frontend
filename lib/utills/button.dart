@@ -35,7 +35,8 @@ back_icon() {
       Navigator.pop(Navigation_services.navigatorkey.currentContext!);
     },
     child: Padding(
-      padding: const EdgeInsets.only(left: 18, top: 13, bottom: 13),
+      padding: EdgeInsets.only(
+          left: w * 0.04986, top: h * 0.01625, bottom: h * 0.01625),
       child: Image.asset(arrow_back_icon),
     ),
   );
