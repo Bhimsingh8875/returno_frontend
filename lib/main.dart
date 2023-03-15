@@ -2,11 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:returno/constants/colors_constant.dart';
-import 'package:returno/navigation_services/navigator_key.dart';
-import 'package:returno/screens/drawer/drawer_main_page.dart';
-import 'package:returno/screens/homepage.dart';
 import 'package:returno/screens/splash/splash.dart';
+
+import 'constants/colors_constant.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

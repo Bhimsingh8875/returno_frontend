@@ -22,15 +22,16 @@ class _Dialog_BoxState extends State<Dialog_Box> {
     w = MediaQuery.of(context).size.width;
     return Center(
         child: AlertDialog(
+      contentPadding: EdgeInsets.all(0),
       backgroundColor: Colors.white,
       content: Container(
-        margin: EdgeInsets.zero,
+        margin: EdgeInsets.only(left: w * 0.04155, right: w * 0.04155),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
           color: white,
         ),
         height: h * 0.1475,
-        width: w * 0.9,
+        width: w * 0.83931,
         child: Column(
           children: [
             SizedBox(height: h * 0.025),
