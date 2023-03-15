@@ -23,9 +23,11 @@ class _Forgot_PasswordState extends State<Forgot_Password> {
   TextEditingController emailcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
+     var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        leading: back_icon(),
+        leading: back_icon(context),
         elevation: 0,
       ),
       backgroundColor: backgroundclr,
@@ -38,11 +40,12 @@ class _Forgot_PasswordState extends State<Forgot_Password> {
             custom_text_with_center(
                 text: forgot_password,
                 style: CustomStyle().style_22_medium(white)),
+            SizedBox(height: w * 0.02),
             custom_text_with_center(
                 text: suggestion,
                 style: CustomStyle().style_16_reguler(black50)),
             SizedBox(height: h * 0.075),
-            custom_textformfield(
+            custom_textformfield(context,
               hintText: email,
               suffixIcon: Icon(
                 Icons.clear,
@@ -60,10 +63,11 @@ class _Forgot_PasswordState extends State<Forgot_Password> {
               },
             ),
             SizedBox(height: h * 0.05),
-            custom_button(
-                onTap: () {FocusScope.of(context).unfocus();
+            custom_button(context,
+                onTap: () {
+                  FocusScope.of(context).unfocus();
                   if (globalKey.currentState!.validate()) {
-                    replaceRoute(context, Login());
+                    replaceRoute(context, Login_Signup());
                   }
                 },
                 children: [

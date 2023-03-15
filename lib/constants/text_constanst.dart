@@ -14,7 +14,7 @@ const tourialtext_two_1 = "Lorem Ipsum Dolor";
 const tourialtext_two_2 =
     "Lorem ipsum dolor sit amet. Ad voluptatem suscipit et fuga excepturi aut dicta quae aut";
 const welcome = "Welcome Back!";
-const suggestion_login = "Please sign in to you account";
+const suggestion_login = "Please sign in to your account";
 const email = "mailto:user@gmail.com";
 const password = "Password";
 const forgot = "Forgot Password?";
@@ -22,12 +22,12 @@ const continue_as_guest = "Continue as guest";
 const create_account = "Create new account";
 const suggestion_sign = "Please fill in the form to continue";
 const sign_up = "Sign Up";
-const already = "Already hava an account?";
+const already = "Already have an account?";
 const account = "Don’t have an account?";
 const forgot_password = "Forgot Password";
 const suggestion_forgot = "A verification link to reset password will be shared on your registered email address.";var suggestion = "Enter your email address";
 
-const settings = "Settings";
+const home = "Home";
 const profile = "Profile";
 const favorites = "Favorites";
 const terms_conditions = "Terms and Conditions";
@@ -40,7 +40,7 @@ const lorem_ipsum_text = "Lorem ipsum dolor sit amet, Lorem";
 const lerm_ipsum_sub_text =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
 const lorem_2_sub_text = "Lorem ipsum dolor sit amet,";
-const logut_contents = "Are you Sure you want to logout?";
+const logut_contents = "Are you sure you want to logout?";
 const cancel = "Cancel";
 const favorite_lorem_text =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";

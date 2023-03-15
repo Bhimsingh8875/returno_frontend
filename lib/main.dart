@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Returno',
-      navigatorKey: Navigation_services.navigatorkey,
       theme: ThemeData(
         primarySwatch: primaryBlack,
       ),

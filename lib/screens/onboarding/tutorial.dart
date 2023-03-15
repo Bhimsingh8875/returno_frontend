@@ -26,9 +26,8 @@ class _TourialState extends State<Tourial> {
   var h1, w1;
   @override
   Widget build(BuildContext context) {
-    h1 =
-    MediaQuery.of(context).size.height; w1 =
-    MediaQuery.of(context).size.width;
+    h1 = MediaQuery.of(context).size.height;
+    w1 = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: backgroundclr,
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
@@ -36,20 +35,21 @@ class _TourialState extends State<Tourial> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: w1* 0.08),
+            padding: EdgeInsets.only(left: w1 * 0.08),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                   page.length,
-                  (index) => custom_circleAvatar(
+                  (index) => custom_circleAvatar(context,
                       backgroundColor:
                           currentIndex == index ? indicatorclr : white)),
             ),
           ),
-          SizedBox(height: h1* 0.035),
+          SizedBox(height: h1 * 0.035),
           Padding(
-              padding: EdgeInsets.only(left: w1* 0.08587, bottom: h1* 0.01875),
-              child: custom_button(
+              padding:
+                  EdgeInsets.only(left: w1 * 0.08587, bottom: h1 * 0.01875),
+              child: custom_button(context,
                   colors: [buttonclr1, buttonclr2],
                   onTap: () {
                     if (currentIndex == 0) {
@@ -57,7 +57,7 @@ class _TourialState extends State<Tourial> {
                           duration: Duration(milliseconds: 300),
                           curve: Curves.linear);
                     } else if (currentIndex == 1) {
-                      push_to(context, Login());
+                      pushAndRevoveUntil(context, Login_Signup());
                     }
                   },
                   children: [
@@ -70,8 +70,8 @@ class _TourialState extends State<Tourial> {
       body: Stack(
         children: [
           SizedBox(
-            height: h1* 1,
-            width: w1* 1,
+            height: h1 * 1,
+            width: w1 * 1,
             child: PageView.builder(
                 controller: pageController,
                 onPageChanged: (value) {
@@ -85,12 +85,12 @@ class _TourialState extends State<Tourial> {
                 }),
           ),
           Padding(
-            padding: EdgeInsets.only(right: w1* 0.04155, top: h1* 0.0575),
+            padding: EdgeInsets.only(right: w1 * 0.04155, top: h1 * 0.0575),
             child: Align(
                 alignment: Alignment.topRight,
                 child: InkWell(
                     onTap: () {
-                      replaceRoute(context, Login());
+                      replaceRoute(context, Login_Signup());
                     },
                     child: custom_text(
                         text: skip,
@@ -107,6 +107,8 @@ class Tourial_one extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: backgroundclr,
       body: Container(
@@ -141,9 +143,11 @@ class Tourial_one extends StatelessWidget {
 
 class Tourial_two extends StatelessWidget {
   const Tourial_two({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: backgroundclr,
       body: Container(

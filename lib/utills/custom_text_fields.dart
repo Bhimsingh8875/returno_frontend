@@ -3,28 +3,29 @@
 import 'package:flutter/material.dart';
 import 'package:returno/utills/text_styles.dart';
 import '../constants/colors_constant.dart';
-import '../constants/media_quiery.dart';
 
-Widget custom_textformfield(
+
+Widget custom_textformfield(BuildContext context,
     {String? hintText,
     Widget? suffixIcon,
     TextEditingController? controller,
     String? Function(String?)? validator,
     bool obscureText = false}) {
+      var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
   return TextFormField(
     keyboardAppearance: Brightness.light,
-  
     cursorWidth: w * 0.00277,
     cursorColor: white70,
     controller: controller,
     style: CustomStyle().style_16_reguler(white70),
     decoration: InputDecoration(
-        contentPadding: EdgeInsets.only(left: w*0.0277),
+        contentPadding: EdgeInsets.only(left: w * 0.0277),
         fillColor: black70,
         filled: true,
         hintText: hintText,
         suffixIcon: Padding(
-          padding:  EdgeInsets.symmetric(vertical: h*0.01875),
+          padding: EdgeInsets.symmetric(vertical: h * 0.01875),
           child: suffixIcon,
         ),
         hintStyle: CustomStyle().style_16_reguler(black50),

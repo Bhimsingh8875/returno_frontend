@@ -19,8 +19,6 @@ const MaterialColor primaryBlack = MaterialColor(
   },
 );
 
-
-
 const black = Colors.black;
 const backgroundclr = Color(0xFF111C22);
 const transparent = Colors.transparent;
@@ -36,3 +34,4 @@ var indicatorclr = Color(0xff38B7FF);
 var black50 = Color(0xff999999);
 var black70 = Color(0xff262A34);
 var white70 = Color(0xffEDEDED);
+var appbar_shadow = Color(0x2eB6B6b6);

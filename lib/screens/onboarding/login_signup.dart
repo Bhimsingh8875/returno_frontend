@@ -6,20 +6,20 @@ import 'package:returno/screens/homepage.dart';
 import 'package:returno/screens/onboarding/forgot_Password.dart';
 import 'package:returno/utills/text_styles.dart';
 import '../../constants/colors_constant.dart';
-import '../../constants/media_quiery.dart';
+
 import '../../utills/button.dart';
 import '../../utills/custom_text_fields.dart';
 import '../../utills/email_validation.dart';
 import '../../utills/navigation_rougth.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Login_Signup extends StatefulWidget {
+  const Login_Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Login_Signup> createState() => _Login_SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _Login_SignupState extends State<Login_Signup> {
   bool visibility = false;
   bool visibility1 = false;
 
@@ -33,6 +33,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: backgroundclr,
         body: Padding(
@@ -52,7 +54,7 @@ class _LoginState extends State<Login> {
                             text: suggestion_login,
                             style: CustomStyle().style_16_reguler(black50)),
                         SizedBox(height: h * 0.075),
-                        custom_textformfield(
+                        custom_textformfield(context,
                           hintText: email,
                           suffixIcon: Icon(
                             Icons.clear,
@@ -70,7 +72,7 @@ class _LoginState extends State<Login> {
                           },
                         ),
                         SizedBox(height: h * 0.0225),
-                        custom_textformfield(
+                        custom_textformfield(context,
                           hintText: password,
                           suffixIcon: GestureDetector(
                             onTap: () {
@@ -100,7 +102,8 @@ class _LoginState extends State<Login> {
                         Align(
                             alignment: Alignment.topRight,
                             child: InkWell(
-                                onTap: () {FocusScope.of(context).unfocus();
+                                onTap: () {
+                                  FocusScope.of(context).unfocus();
                                   push_to(context, Forgot_Password());
                                   login_emailcontroller.clear();
                                   login_passwordcontroller.clear();
@@ -110,42 +113,36 @@ class _LoginState extends State<Login> {
                                     style: CustomStyle()
                                         .style_15_reguler(black50)))),
                         SizedBox(height: h * 0.0475),
-                        custom_button(
-                            onTap: () { FocusScope.of(context).unfocus();
-                              if (login_key.currentState!.validate()) {
-                                login_emailcontroller.clear();
-                                login_passwordcontroller.clear();
-                               
+                        custom_button(context, onTap: () {
+                          FocusScope.of(context).unfocus();
+                          if (login_key.currentState!.validate()) {
+                            login_emailcontroller.clear();
+                            login_passwordcontroller.clear();
 
-                                pushAndRevoveUntil(context, Homepage());
-                              }
-                            },
-                            children: [
-                              custom_text(
-                                  text: login,
-                                  style: CustomStyle().style_18_reguler(white)),
-                            ],
-                            colors: [
-                              buttonclr1,
-                              buttonclr2
-                            ]),
+                            pushAndRevoveUntil(context, Homepage());
+                          }
+                        }, children: [
+                          custom_text(
+                              text: login,
+                              style: CustomStyle().style_18_reguler(white)),
+                        ], colors: [
+                          buttonclr1,
+                          buttonclr2
+                        ]),
                         SizedBox(height: h * 0.0225),
-                        custom_button(
-                            onTap: () {
-                              FocusScope.of(context).unfocus();
-                              login_emailcontroller.clear();
-                              login_passwordcontroller.clear();
-                              pushAndRevoveUntil(context, Homepage());
-                            },
-                            children: [
-                              custom_text(
-                                  text: continue_as_guest,
-                                  style: CustomStyle().style_18_reguler(blue)),
-                            ],
-                            colors: [
-                              white,
-                              white
-                            ]),
+                        custom_button(context, onTap: () {
+                          FocusScope.of(context).unfocus();
+                          login_emailcontroller.clear();
+                          login_passwordcontroller.clear();
+                          pushAndRevoveUntil(context, Homepage());
+                        }, children: [
+                          custom_text(
+                              text: continue_as_guest,
+                              style: CustomStyle().style_18_reguler(blue)),
+                        ], colors: [
+                          white,
+                          white
+                        ]),
                         SizedBox(height: h * 0.0475),
                       ]),
                     )
@@ -163,7 +160,7 @@ class _LoginState extends State<Login> {
                                 text: suggestion_sign,
                                 style: CustomStyle().style_16_reguler(black50)),
                             SizedBox(height: h * 0.075),
-                            custom_textformfield(
+                            custom_textformfield(context,
                               hintText: email,
                               suffixIcon: Icon(
                                 Icons.clear,
@@ -181,7 +178,7 @@ class _LoginState extends State<Login> {
                               },
                             ),
                             SizedBox(height: h * 0.0225),
-                            custom_textformfield(
+                            custom_textformfield(context,
                               hintText: password,
                               suffixIcon: GestureDetector(
                                 onTap: () {
@@ -208,12 +205,13 @@ class _LoginState extends State<Login> {
                               obscureText: !visibility1,
                             ),
                             SizedBox(height: h * 0.0475),
-                            custom_button(
-                                onTap: () { FocusScope.of(context).unfocus();
+                            custom_button(context,
+                                onTap: () {
+                                  FocusScope.of(context).unfocus();
                                   if (signup_key.currentState!.validate()) {
                                     signup_emailcontroller.clear();
                                     signup_passwordcontroller.clear();
-                                   
+
                                     pushAndRevoveUntil(context, Homepage());
                                   }
                                 },
@@ -228,7 +226,7 @@ class _LoginState extends State<Login> {
                                   buttonclr2
                                 ]),
                             SizedBox(height: h * 0.0225),
-                            custom_button(
+                            custom_button(context,
                                 onTap: () {
                                   FocusScope.of(context).unfocus();
                                   signup_emailcontroller.clear();
@@ -254,10 +252,11 @@ class _LoginState extends State<Login> {
                   custom_text(
                       text: current_page ? account : already,
                       style: CustomStyle().style_16_reguler(white70)),
-                  SizedBox(width: w * 0.001385),
+                  SizedBox(width: w * 0.012),
                   InkWell(
                     onTap: (() {
-                      setState(() { FocusScope.of(context).unfocus();
+                      setState(() {
+                        FocusScope.of(context).unfocus();
                         current_page = !current_page;
                         signup_emailcontroller.clear();
                         signup_passwordcontroller.clear();

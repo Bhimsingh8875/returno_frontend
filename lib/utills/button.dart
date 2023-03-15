@@ -1,15 +1,16 @@
-// ignore_for_file: non_constant_identifier_names, sort_child_properties_last, prefer_const_constructors
+// ignore_for_file: non_constant_identifier_names, sort_child_properties_last, prefer_const_constructors, unused_local_variable
 
 import 'package:flutter/material.dart';
 import '../constants/image_constants.dart';
-import '../constants/media_quiery.dart';
-import '../navigation_services/navigator_key.dart';
 
-Widget custom_button(
+
+Widget custom_button(BuildContext context,
     {double? width,
     Function()? onTap,
     List<Widget>? children,
     List<Color>? colors}) {
+      var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
   return InkWell(
     onTap: onTap,
     child: Container(
@@ -29,14 +30,15 @@ Widget custom_button(
 }
 
 // arrow back button
-back_icon() {
+back_icon(BuildContext context) {
+  var h = MediaQuery.of(context).size.height;
+    var w = MediaQuery.of(context).size.width;
   return GestureDetector(
     onTap: () {
-      Navigator.pop(Navigation_services.navigatorkey.currentContext!);
+      Navigator.pop(context);
     },
     child: Padding(
-      padding: EdgeInsets.only(
-          left: w * 0.04986, top: h * 0.01625, bottom: h * 0.01625),
+      padding: EdgeInsets.only(top: h * 0.01625, bottom: h * 0.015),
       child: Image.asset(arrow_back_icon),
     ),
   );
