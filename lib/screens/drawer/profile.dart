@@ -6,7 +6,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../constants/colors_constant.dart';
 import '../../constants/image_constants.dart';
-
 import '../../constants/text_constanst.dart';
 import '../../utills/button.dart';
 import '../../utills/custom_text_fields.dart';

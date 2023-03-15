@@ -25,8 +25,8 @@ const sign_up = "Sign Up";
 const already = "Already have an account?";
 const account = "Don’t have an account?";
 const forgot_password = "Forgot Password";
-const suggestion_forgot = "A verification link to reset password will be shared on your registered email address.";var suggestion = "Enter your email address";
-
+const suggestion_forgot = "A verification link to reset password will be shared on your registered email address.";
+const suggestion = "Enter your email address";
 const home = "Home";
 const profile = "Profile";
 const favorites = "Favorites";

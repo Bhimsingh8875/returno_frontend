@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:returno/constants/colors_constant.dart';
 import '../../constants/image_constants.dart';
-import '../../constants/media_quiery.dart';
 import '../../utills/navigation_rougth.dart';
 import '../onboarding/tutorial.dart';
-
 class Splash extends StatefulWidget {
   const Splash({super.key});
 
@@ -24,7 +22,6 @@ class _SplashState extends State<Splash> {
     });
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
      var h = MediaQuery.of(context).size.height;

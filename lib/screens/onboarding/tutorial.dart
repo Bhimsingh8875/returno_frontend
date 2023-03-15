@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/colors_constant.dart';
 import '../../constants/image_constants.dart';
-import '../../constants/media_quiery.dart';
 import '../../constants/text_constanst.dart';
 import '../../navigation_services/navigator_key.dart';
 import '../../utills/button.dart';

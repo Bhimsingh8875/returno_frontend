@@ -7,7 +7,6 @@ import 'package:returno/screens/onboarding/login_signup.dart';
 import 'package:returno/utills/button.dart';
 import 'package:returno/utills/email_validation.dart';
 import 'package:returno/utills/text_styles.dart';
-import '../../constants/media_quiery.dart';
 import '../../utills/custom_text_fields.dart';
 import '../../utills/navigation_rougth.dart';
 
