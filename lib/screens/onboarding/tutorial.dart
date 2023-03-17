@@ -154,7 +154,7 @@ class Tourial_two extends StatelessWidget {
           width: w * 1,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(tourialbackground), fit: BoxFit.cover)),
+                  image: AssetImage(tourialbackground), fit: BoxFit.fill)),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: w * 0.04155),
             child: Column(

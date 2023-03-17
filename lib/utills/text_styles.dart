@@ -23,7 +23,7 @@ class CustomStyle {
   style_15_reguler(Color color) => GoogleFonts.roboto(
       fontSize: 15, color: color, fontWeight: FontWeight.w400);
   style1_15_reguler(Color color) => GoogleFonts.roboto(
-      height: 1.3, fontSize: 15, color: color, fontWeight: FontWeight.w400);
+      height: 1.4, fontSize: 15, color: color, fontWeight: FontWeight.w400);
   style_15_medium(Color color) => GoogleFonts.roboto(
       fontSize: 15, color: color, fontWeight: FontWeight.w500);
   style_16_reguler(Color color) => GoogleFonts.roboto(

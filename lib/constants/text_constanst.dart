@@ -1,7 +1,3 @@
-
-
-
-
 // ignore_for_file: constant_identifier_names
 
 const login = "Login";
@@ -25,7 +21,8 @@ const sign_up = "Sign Up";
 const already = "Already have an account?";
 const account = "Don’t have an account?";
 const forgot_password = "Forgot Password";
-const suggestion_forgot = "A verification link to reset password will be shared on your registered email address.";
+const suggestion_forgot =
+    "A verification link to reset password will be shared on your registered email address.";
 const suggestion = "Enter your email address";
 const home = "Home";
 const profile = "Profile";
@@ -38,7 +35,7 @@ const change_password = "Change Password";
 const logout = "Logout";
 const lorem_ipsum_text = "Lorem ipsum dolor sit amet, Lorem";
 const lerm_ipsum_sub_text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
+    "Lorem ipsum dolor sit amet, consect, sed do aliqua.consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit, sed do eiusmod Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore  sed do eiusmod tempor incidid";
 const lorem_2_sub_text = "Lorem ipsum dolor sit amet,";
 const logut_contents = "Are you sure you want to logout?";
 const cancel = "Cancel";

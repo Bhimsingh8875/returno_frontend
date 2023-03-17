@@ -14,5 +14,5 @@ const background_image = "assets/new/NoPath - Copy@2x.png";
 const arrow_back_icon = "assets/new/Group 1596@2x.png";
 const edit_icon = "assets/new/edit@2x.png";
 const profile_image = "assets/new/NoPath - Copy (3)@2x.png";
-const backgroung_home = "assets/images/NoPath - Copy.png";
+const backgroung_home = "assets/images/modi.jpg";
 const background_Favorites = "assets/images/NoPat.png";
